@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MichelaBassaSciocca</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>加密解密工具</h1>
+    <p>请选择操作模式</p>
+    <select id="operation">
+        <option value="1">加密</option>
+        <option value="2">解密</option>
+    </select>
+    <br><br>
+    <textarea id="inputText" rows="4" cols="50" placeholder="请输入要加密或解密的内容"></textarea>
+    <br><br>
+    <button onclick="processText()">提交</button>
+    <p id="result"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
