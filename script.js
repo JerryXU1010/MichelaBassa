@@ -1,4 +1,3 @@
-// 原子表
 const elementMap = {
     1: "氢", 4: "氦", 7: "锂", 9: "铍", 11: "硼",
     12: "碳", 14: "氮", 16: "氧", 19: "氟", 20: "氖",
@@ -10,14 +9,16 @@ const elementMap = {
 function encode(text) {
     const mass = [0, 1, 4, 7, 9, 11, 12, 14, 16, 19, 20, 23, 24, 27, 28, 31, 32, 35, 40, 39, 40];
     const find = (x) => mass.includes(x);
+    
+    // 处理任意长度的Unicode字符
     const bin = (x) => {
-        let res = x.toString(2).padStart(7, '0');
-        return res.length > 7 ? "ERROR" : res;
+        let res = x.toString(2).padStart(16, '0'); // 将每个字符的Unicode编码转换为16位的二进制
+        return res.length > 16 ? "ERROR" : res;
     };
 
     let res = '';
     for (let char of text) {
-        let binValue = bin(char.charCodeAt(0));
+        let binValue = bin(char.charCodeAt(0)); // 获取字符的Unicode编码并转换为二进制
         for (let bit of binValue) {
             let tmp = Math.floor(Math.random() * 39) + 1;
             if (bit === '1') {
@@ -40,7 +41,7 @@ function decode(text) {
 
     let res = '';
     let binary = '';
-    for (let i = 0; i < text.length; i += 1) {
+    for (let i = 0; i < text.length; i++) {
         const element = text[i];
         let atomicNumber = reverseMap[element];
         if (atomicNumber % 2 === 1) {
@@ -49,9 +50,10 @@ function decode(text) {
             binary += '0';
         }
 
-        if (binary.length === 7) {
-            let charCode = parseInt(binary, 2);
-            res += String.fromCharCode(charCode);
+        // 每16位为一个字符的二进制编码
+        if (binary.length === 16) {
+            let charCode = parseInt(binary, 2); // 将二进制转换为整数
+            res += String.fromCharCode(charCode); // 将整数转换为字符
             binary = '';
         }
     }
@@ -71,5 +73,4 @@ function processText() {
     }
 
     document.getElementById("result").value = result;
-
 }
