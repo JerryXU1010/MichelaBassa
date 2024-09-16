@@ -173,7 +173,12 @@ function aesDecrypt(ciphertext, key) {
 
 // 切换显示凯撒密码偏移量输入框
 function toggleCaesarShift() {
-    const method = document.getElementById('method').value;
-    const caesarShiftDiv = document.getElementById('caesarShiftDiv');
-    caesarShiftDiv.style.display = method === 'caesar' ? 'block' : 'none';
+    var method = document.getElementById("method").value;
+    var caesarShiftDiv = document.getElementById("caesarShiftDiv");
+
+    if (method === "caesar") {
+        caesarShiftDiv.classList.add("active");
+    } else {
+        caesarShiftDiv.classList.remove("active");
+    }
 }

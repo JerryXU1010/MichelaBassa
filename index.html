@@ -61,18 +61,6 @@
             padding: 10px;
         }
 
-        input,
-        select,
-        textarea,
-        button {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 8px;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
-
         textarea {
             resize: none;
         }
@@ -89,14 +77,64 @@
             background-color: #2980b9;
         }
 
+        input,
+        select,
+        textarea,
+        button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            /* 添加统一的边框颜色 */
+            background-color: #fff;
+            /* 统一背景色 */
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
         input:focus,
         select:focus,
         textarea:focus,
         button:focus {
             outline: none;
             border-color: #3498db;
+            /* 焦点时统一边框颜色 */
             box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
         }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+            /* 去除 Firefox 上数字输入框的默认样式 */
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            /* 去除 Chrome 上数字输入框的默认样式 */
+        }
+
+        /* select 和 input 统一样式 */
+        select,
+        input {
+            appearance: none;
+            background-color: #fff;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        select:focus,
+        input:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+            outline: none;
+        }
+
 
         .caesarShiftDiv {
             display: none;
