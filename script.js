@@ -70,5 +70,6 @@ function processText() {
         result = decode(inputText);
     }
 
-    document.getElementById("result").innerText = result;
+    document.getElementById("result").value = result;
+
 }
