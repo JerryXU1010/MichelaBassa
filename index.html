@@ -14,6 +14,9 @@
         #result {
             margin-top: 20px;
             font-weight: bold;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
@@ -28,8 +31,8 @@
     <textarea id="inputText" rows="4" cols="50" placeholder="请输入要加密或解密的内容"></textarea>
     <br><br>
     <button onclick="processText()">提交</button>
-    <textarea id="result" rows="4" cols="50"></textarea>
-
+    <br><br>
+    <textarea id="result" rows="4" cols="50" placeholder="结果将在这里显示"></textarea>
 
     <script src="script.js"></script>
 </body>
