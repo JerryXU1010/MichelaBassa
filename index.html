@@ -173,12 +173,12 @@
 
         <p>请选择加解密方式</p>
         <select id="method" onchange="toggleCaesarShift()">
-            <option value="element">化学元素加解密</option>
+            <option value="aes">AES加密（推荐！）</option>
             <option value="base64">Base64</option>
+            <option value="element">化学元素加解密（Michelaの杰作，已支持中文）</option>
             <option value="caesar">凯撒密码（仅支持字母）</option>
             <option value="rot13">ROT13（仅支持字母）</option>
             <option value="morse">摩斯密码（仅支持字母）</option>
-            <option value="aes">AES加密</option>
         </select>
 
         <div id="caesarShiftDiv" class="caesarShiftDiv">
