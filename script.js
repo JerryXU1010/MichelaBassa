@@ -44,7 +44,7 @@ function processText() {
         result =
             operation === "1" ? morseEncrypt(inputText) : morseDecrypt(inputText);
     } else if (method === "aes") {
-        var key = document.getElementById("aesPassword").value;
+        var key = !document.getElementById("aesPassword").value ? "MichelaBassa" : document.getElementById("aesPassword").value;
         result =
             operation === "1"
                 ? aesEncrypt(inputText, key)
